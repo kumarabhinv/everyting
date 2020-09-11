@@ -1,6 +1,6 @@
 Feature: Validating the functionality of Esports tab in sports betting.
 
-  @DESKTOP @MOBILE
+  @DESKTOP @MOBILE @TEST
   Scenario Outline: User visits SportsBetting application
     Given I am on SportsBetting application
     When User login to the SportsBetting site with following credential <Username> and <Password>
@@ -18,7 +18,7 @@ Feature: Validating the functionality of Esports tab in sports betting.
       | Time |
 
 
-  @DESKTOP
+  @DESKTOP @TEST
   Scenario Outline:  User verifies Esports tab present inside the home page
     Given I am on SportsBetting application
     When I move to <Tab>
@@ -28,13 +28,13 @@ Feature: Validating the functionality of Esports tab in sports betting.
       | ESPORTS |
 
 
-  @DESKTOP  
+  @DESKTOP   @TEST
   Scenario: User accesses Favorite sub-tab under Esports page
     Given as a User, I move to Esports page
     When I click on Favorite sub-tab
     Then User see No favorites message
 
-  @DESKTOP  
+  @DESKTOP  @TEST
   Scenario: User adds teams as Favorite
     Given I am on SportsBetting application
     And I click on Esports tab
@@ -44,7 +44,7 @@ Feature: Validating the functionality of Esports tab in sports betting.
     Then verify team added to Favorite
 
 
-  @DESKTOP 
+  @DESKTOP @TEST
   Scenario: User deletes teams from Favorite sub-tab under Esports page
     Given I am on SportsBetting application
     And I click on Esports tab
@@ -71,7 +71,7 @@ Feature: Validating the functionality of Esports tab in sports betting.
 
 
 #BET HISTORY
-  @DESKTOP 
+  @DESKTOP @TEST
   Scenario Outline: User accesses BET HISTORY tab present inside the Esports page
     Given I am on SportsBetting application
     And I click on Esports tab
@@ -85,11 +85,11 @@ Feature: Validating the functionality of Esports tab in sports betting.
 
 
 #LIVE
-  @DESKTOP 
+  @DESKTOP  @TEST
   Scenario: User accesses LIVE sub-tab present inside the Esports page
     Given I am on SportsBetting application
     And I click on Esports tab
-    And I click on Esports tab LIVE
+    And I click on Esports LIVE
 #   And I see all the teams that are live with bet type
     And I see all teams that are live with bet type
       | 1X2   |
@@ -118,12 +118,12 @@ Feature: Validating the functionality of Esports tab in sports betting.
   @MOBILE
   Scenario: User views detailed view of any team under Live sub-tab
     Given as a User, I move to Esports page
-    And I click on Esports tab LIVE
+    And I click on Esports LIVE
     When I click on any team name
     Then I see all the details related to that team with betting options
 
     #Pending Bets
-  @DESKTOP 
+  @DESKTOP @TEST
   Scenario: User accesses Pending Bets tab present inside the Bet History page
     Given I am on SportsBetting application
     And I click on Esports tab
@@ -149,7 +149,7 @@ Feature: Validating the functionality of Esports tab in sports betting.
   Scenario: User watches live video under LIVE sub-tab present inside the Esports page
     Given I am on SportsBetting application
     And I click on Esports tab
-    And I click on Esports tab LIVE
+    And I click on Esports LIVE
     When I click on Video (Icon) available under any one team
     Then I see new window opened with Live Video playing in it
 
@@ -157,7 +157,7 @@ Feature: Validating the functionality of Esports tab in sports betting.
   Scenario: User views detailed view of any team under Live sub-tab
     Given I am on SportsBetting application
     And I click on Esports tab
-    And I click on Esports tab LIVE
+    And I click on Esports LIVE
     When I click on any team name
     Then I see all the details related to that team with betting options
 
@@ -441,7 +441,7 @@ Feature: Validating the functionality of Esports tab in sports betting.
   @MOBILE
   Scenario: User accesses "Right Navigator" under ESports tab
     Given as a User, I move to Esports page
-    When I click on Esports tab Right Navigator
+    When I click on Esports Right Navigator
     Then I see BET SLIP and MY BETS inside the right navigator
 
 

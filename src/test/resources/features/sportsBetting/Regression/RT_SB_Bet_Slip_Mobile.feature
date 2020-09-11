@@ -1,6 +1,6 @@
 Feature: User validates all the functionalies of "Bet Slip" tab
 
-  @MOBILE1
+  @MOBILE
   Scenario Outline: User visits SportsBetting application
     Given I am on SportsBetting application
     When User login to the SportsBetting site with following credential <Username> and <Password>
@@ -96,7 +96,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     When I confirm my straight bet
     Then I should see my "Ticket Number"
 
-  @MOBILE1
+  @MOBILE
   Scenario: User adds more than one bet from "SPORTS" page
     Given as a User, I see teams available to bet
     And I choose a team in SportsBook page
@@ -105,7 +105,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     Then I choose a team from different match
     And I see Check your Bet Slip as a bar showing number of bets added
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses "Check your Bet Slip" bar displayed after clicking "Add More Selections" under "Straight Bet"
     Given as a User, I already see Check your Bet Slip bar with number of selections being displayed
     And I click on Check your Bet Slip
@@ -116,7 +116,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
       | If Bet         |
       | Action Reverse |
 
-  @MOBILE1
+  @MOBILE
   Scenario: User places bet(s) from under "Parlays"
     Given as a User, I see Bet Slip with Single Bet
     And I place a Parlay Bet
@@ -124,7 +124,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     When I confirm my bet
     Then I should see my "Ticket Number"
 
-  @MOBILE1
+  @MOBILE
   Scenario: User adds more than one bet from "SPORTS" page
     Given as a User, I see teams available to bet
     And I choose a team in SportsBook page
@@ -133,7 +133,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     Then I choose a team from different match
     And I see Check your Bet Slip as a bar showing number of bets added
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses "Check your Bet Slip" bar displayed after clicking "Add More Selections" under "Straight Bet"
     Given as a User, I already see Check your Bet Slip bar with number of selections being displayed
     And I click on Check your Bet Slip
@@ -144,7 +144,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
       | If Bet         |
       | Action Reverse |
 
-  @MOBILE1
+  @MOBILE
   Scenario: User verifies all the operations available under "If Bet"
     Given as a User, I see Bet Slip with Single Bet
     And I select If Bet (If in collapsed state)
@@ -154,7 +154,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     Then I click on Down or Up and see position of team changes
     And I select If Bet (If in collapsed state)
 
-  @MOBILE1
+  @MOBILE
   Scenario: User performs any action using Down or Up buttons under "If Bet" and Place bet
     Given as a User, I see Bet Slip with Single Bet
     And I click on single bet under Bet Slip
@@ -163,7 +163,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     When I confirm my bet
     Then I should see my "Ticket Number"
 
-  @MOBILE1
+  @MOBILE
   Scenario: User places a Action Reverse Bet in SportsBook page
     Given I am on SportsBetting application
     And I move to SPORTS
@@ -176,7 +176,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     When I confirm my bet
     Then I should see my "Ticket Number"
 
-  @MOBILE1
+  @MOBILE
   Scenario: User adds more than one bet from "SPORTS" page
     Given as a User, I see teams available to bet
     And I choose a team in SportsBook page
@@ -185,7 +185,7 @@ Feature: User validates all the functionalies of "Bet Slip" tab
     Then I choose a team from different match
     And I see Check your Bet Slip as a bar showing number of bets added
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses "Check your Bet Slip" bar displayed after clicking "Add More Selections" under "Straight Bet"
     Given as a User, I already see Check your Bet Slip bar with number of selections being displayed
     And I click on Check your Bet Slip
@@ -196,14 +196,14 @@ Feature: User validates all the functionalies of "Bet Slip" tab
       | If Bet         |
       | Action Reverse |
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses "ADD MORE SELECTIONS" under "Bet Slip"
     Given as a User, I see Bet Slip with Single Bet
     When I click ADD MORE SELECTIONS under bet slip
     Then I see page is redirected to the Sports tab page
     And I see Check your Bet Slip as a bar showing number of bets added
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses "Delete All" under "Bet Slip"
     Given as a User, I already see Check your Bet Slip bar with number of selections being displayed
     When I click Delete All under bet slip

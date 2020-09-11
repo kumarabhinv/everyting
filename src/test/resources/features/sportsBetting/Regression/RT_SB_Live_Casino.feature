@@ -1,6 +1,6 @@
 Feature: Accessing the PTY Live Casino Tab
 
-  @DESKTOP @MOBILE
+  @DESKTOP @MOBILE @TEST11
   Scenario Outline: User visits SportsBetting application
     Given I am on SportsBetting application
     When User login to the SportsBetting site with following credential <Username> and <Password>
@@ -53,7 +53,7 @@ Feature: Accessing the PTY Live Casino Tab
 #    Then I see page redirected to particular game page
 
 #BACCARAT BLACK
-  @DESKTOP
+  @DESKTOP @TEST11
   Scenario:  User verifies Baccarat game type under live casino
     Given I am on SportsBetting application
     And I Mouse hover LIVE CASINO tab
@@ -61,15 +61,15 @@ Feature: Accessing the PTY Live Casino Tab
     When I click Baccarat
     Then I should see games related to the Baccarat
 
-  @DESKTOP
-  Scenario: User accesses any game under Tables game type
+  @DESKTOP @TEST11
+  Scenario: User accesses any game under Baccarat game type
     Given I am on Black sub-tab
     And I click Baccarat
     When I click on any game in Baccarat Games
     Then I see page redirected to selected game page
 
 #    ROULETTE
-  @DESKTOP
+  @DESKTOP  @TEST11
   Scenario:  User verifies Roulette game type under live casino
     Given I am on SportsBetting application
     And I Mouse hover LIVE CASINO tab
@@ -77,7 +77,7 @@ Feature: Accessing the PTY Live Casino Tab
     When I click Roulette in Live Casino
     Then I should see games related to the Roulette
 
-  @DESKTOP
+  @DESKTOP @TEST11
   Scenario: User accesses any game under Tables game type
     Given I am on Black sub-tab
     And I click Roulette in Live Casino

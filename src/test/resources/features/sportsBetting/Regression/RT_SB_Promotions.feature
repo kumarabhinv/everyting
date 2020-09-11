@@ -61,7 +61,7 @@ Feature: Accessing the PTY Promotions Tab
 
   @DESKTOP  
   Scenario: User decides to Cancel the Terms & Conditions pop-up under the Deposit sub-tab of Promotions tab
-    Given as a User, I am on the Terms & Conditions pop-up
+    Given as a User, I am on the Terms & Conditions pop-up in sportsBetting
     When I click on Cancel (either button or icon)
     Then I see the Terms & Conditions pop-up gets closed
 

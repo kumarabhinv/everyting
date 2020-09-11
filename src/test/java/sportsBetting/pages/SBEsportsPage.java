@@ -448,7 +448,7 @@ public class SBEsportsPage extends BasePage {
 
 
     public boolean verifyTicketNumberEsports() {
-        waitForSeconds(30);
+        waitForSeconds(2);
         if(verifyElement(txtEsportsBetInProgress))
         {
             if(System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE))
@@ -608,11 +608,11 @@ public class SBEsportsPage extends BasePage {
         }
         else {
             waitForElement(elmntUnder1x2HeaderEsportDesktop);
-            if(!System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE)) {
+            if(System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_BROWSER)) {
                 click(elmntUnder1x2HeaderEsportDesktop);
             }
             click(elmntUnderSecondMap2HeaderEsportDesktop);
-        }
+    }
     }
 
     public void clickElmntChoosing1Esports() {

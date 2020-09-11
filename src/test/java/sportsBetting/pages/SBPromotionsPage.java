@@ -149,7 +149,7 @@ public class SBPromotionsPage extends BasePage {
     //*Poker
 
     //    REFER A FRIEND*
-    @FindBy(how = How.ID, using = "refer_3col")
+    @FindBy(how = How.XPATH, using = "//a[@class='btn btn-cta']")
     protected WebElement elmntReferFriendTable;
 
     //*REFER A FRIEND
@@ -285,6 +285,7 @@ public class SBPromotionsPage extends BasePage {
 
 
     public void clickOnCloseIconInTermsAndConditionsPopUp() {
+        closeWindow(2);
         jsClick(closeIconInTermsAndConditionPopUp);
 
     }

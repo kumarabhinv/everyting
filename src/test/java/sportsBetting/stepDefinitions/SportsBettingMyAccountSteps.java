@@ -2135,15 +2135,15 @@ public class SportsBettingMyAccountSteps {
         Assert.assertTrue(SportsBettingPageContainer.sbmyaccountpage.clickSubjectDropDownUnderMyMessages());
     }
 
-//    @Given("^as a User, I see all the details shown for that particular selection$")
-//    public void asAUserISeeAllTheDetailsShownForThatParticularSelection() {
-//        Assert.assertTrue(SportsBettingPageContainer.sbmyaccountpage.verifyLinkUnderDailyFigures());
-//    }
-//
-//    @Then("^I see all the details shown for that particular selection gets collapsed$")
-//    public void iSeeAllTheDetailsShownForThatParticularSelectionGetsCollapsed() {
-//        Assert.assertTrue(SportsBettingPageContainer.sbmyaccountpage.verifyCurrentWeekUnderDailyFigures());
-//    }
+    @Given("^as a User, I see all the details shown for that particular selection$")
+    public void asAUserISeeAllTheDetailsShownForThatParticularSelection() {
+        Assert.assertTrue(SportsBettingPageContainer.sbmyaccountpage.verifyLinkUnderDailyFigures());
+    }
+
+    @Then("^I see all the details shown for that particular selection gets collapsed$")
+    public void iSeeAllTheDetailsShownForThatParticularSelectionGetsCollapsed() {
+        Assert.assertTrue(SportsBettingPageContainer.sbmyaccountpage.verifyCurrentWeekUnderDailyFigures());
+    }
 
     @And("^I see several promotions available under Promotion of My Account page$")
     public void iSeeSeveralPromotionsAvailableUnderPromotionOfMyAccountPage() {

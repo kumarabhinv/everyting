@@ -368,7 +368,7 @@ public class SportsBettingEsportsSteps {
     }
 
     @And("^I click on any of Esports (.*)$")
-    public void iClickOnAnyOfEsports(String subTabsEsports) {
+    public void iClickOnAnyOfEsportsSubTab(String subTabsEsports) {
         SportsBettingPageContainer.sbesportspage.clickSubTabsEsports(subTabsEsports);
     }
 
@@ -431,8 +431,9 @@ public class SportsBettingEsportsSteps {
     }
 
     @Then("^I see My Bets (.*)$")
-    public void iSeeMyBets(String strMyBetsOptions) {
+    public void iSeeMyBetsOptions(String strMyBetsOptions) {
         Assert.assertTrue(SportsBettingPageContainer.sbesportspage.verifyMyBetsOptions(strMyBetsOptions));
+
     }
 
     @When("^I click on History$")
@@ -443,6 +444,7 @@ public class SportsBettingEsportsSteps {
     @Then("^I should see all the Bets that are pending in MyBets$")
     public void iShouldSeeAllTheBetsThatArePendingInMyBets() {
         SportsBettingPageContainer.sbesportspage.verifyPendingBetsInMyBets();
+
     }
 
     @When("^I click on Pending Bets in My Bets$")

@@ -924,6 +924,7 @@ public class SBLiveBettingPage extends BasePage {
             focusFrame(waitForElement(liveBetFrame));
             return verifyElement(waitForElement(elmntBetslip));
         }
+        waitForSeconds(3);
         focusFrame(liveBetFrame);
         verifyElement(elmntBetslip);
         String betslip = elmntBetslip.getText();
@@ -941,7 +942,9 @@ public class SBLiveBettingPage extends BasePage {
             focusBackToDefaultFrame();
             return betSlipTabs;
         } else {
-            return focusBackToDefaultFrame();
+            boolean betSlipTabs = verifyElement(btnBetslipTabs);
+            focusBackToDefaultFrame();
+            return betSlipTabs;
         }
     }
 

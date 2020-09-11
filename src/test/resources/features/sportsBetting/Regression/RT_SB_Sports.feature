@@ -1,10 +1,10 @@
 Feature: Validating the functionality of Sports tab in SportsBetting
 
-  @DESKTOP @MOBILE1
+  @DESKTOP @MOBILE
   Scenario Outline: User visits SportsBetting application
     Given I am on SportsBetting application
     When User login to the SportsBetting site with following credential <Username> and <Password>
-    #Then I should see the SportsBetting site homepage
+    Then I should see the SportsBetting site homepage
 
     Examples:
       | Username  | Password  |
@@ -1540,7 +1540,7 @@ Feature: Validating the functionality of Sports tab in SportsBetting
 
 
 
-  #//---------------------------//
+#  //---------------------------//
 
   @MOBILE
   Scenario: User accesses "PLAYER PROPS" tab under homepage
@@ -1742,11 +1742,11 @@ Feature: Validating the functionality of Sports tab in SportsBetting
     Then I should see bet successful message
     And I remove team from Bet Slip
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses "PLAYER PROPS" tab under homepage
     Given I am on SportsBetting application
     And I move to PLAYER PROPS
-    And I Should see two navigators under Player Props page
+    And I see two navigators under Player Props page
     And I click on Left Navigator and I see three odds converters
       | AMERICAN |
       | DECIMAL  |
@@ -1759,7 +1759,7 @@ Feature: Validating the functionality of Sports tab in SportsBetting
     And I see a dropdown displaying all teams available to select form
     And I see all the displayed teams changes according to the selected choice
 
-  @MOBILE1
+  @MOBILE
   Scenario: User accesses the "BUILD" present under "PLAYER PROPS" tab
     Given I see few sub-tabs on the page displayed on clicking PLAYER PROPS
       | BUILD        |

@@ -122,9 +122,6 @@ public class SBSportsPage extends BasePage {
     })
     protected WebElement elmntBetSlipForm;
 
-    @FindBy(how = How.ID, using = "point-select")
-    protected WebElement elmntPointDropDown;
-
     @FindBy(how = How.XPATH, using = "//a[contains(.,'Straight')][contains(.,'Bet')][not(contains(@class,'hide'))]")
     protected WebElement elmntStraightBetSubTab;
 
@@ -249,9 +246,6 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'Action Reverse')]//following::input[@id='rvbet']")
     protected WebElement txtActionReverseBet;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Action Reverse')]//following::input[@id='rvtoWin']")
-    protected WebElement txtActionReverseWinBet;
-
     @FindAll({
             @FindBy(how = How.XPATH, using = "//*[@id='RightScroller']/descendant::div[@class='betSlipError'][1]/following::div[1]/ul[2]"),
             @FindBy(how = How.XPATH, using = "//span[contains(text(),'Parlays')]")
@@ -284,9 +278,6 @@ public class SBSportsPage extends BasePage {
 
     @FindBy(how = How.XPATH, using = "//input[@id='placeMyBet']")
     protected WebElement elmntPlaceBet;
-
-    @FindBy(how = How.XPATH, using = "//li[@id='parlay-betsection']//div[text()='Parlay']")
-    protected WebElement elmntparlay;
 
     @FindAll({
             @FindBy(how = How.XPATH, using = "//a[.='Confirm My Bet']"),
@@ -663,17 +654,20 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//li[@id='tabHeader_3']/a[.='Promotions']")
     protected WebElement btnPromotions;
 
+
     //h2[.='MMA ODDS']
     protected String strOddsHeader2 = new StringBuilder()
             .append("//h2[normalize-space()='")
             .append("<<TABNAME>>")
             .append("']").toString();
 
+
     //h1[contains(text(),'MMA Betting Odds & News')]
     protected String strOddsHeader1 = new StringBuilder()
             .append("//h1[contains(text(),'")
             .append("<<TABNAME>>")
             .append("')]").toString();
+
 
     protected String strOddsHeader3 = new StringBuilder()
             .append("//h2[.='")
@@ -691,8 +685,10 @@ public class SBSportsPage extends BasePage {
             .append("')]").toString();
     //ul[@class='dyn makeLink']//a/strong[contains(text(),'')]
 
+
     @FindBy(how = How.XPATH, using = "//li[@id='licat_mlb-betting']//a//span[contains(text(),'')]")
     protected List<WebElement> elmntMLBsubtabs;
+
 
     @FindBy(how = How.XPATH, using = "//h2[text()='BOXING ODDS']")
     protected WebElement elmntBoxingOddsHeader;
@@ -804,6 +800,7 @@ public class SBSportsPage extends BasePage {
             .append("<<TABNAME>>")
             .append("')]").toString();
 
+
     @FindBy(how = How.XPATH, using = "//div[@class='dynNav']//div/a[contains(text(),'MAIN SPORTS')]")
     protected WebElement btnMainSportsGames;
 
@@ -875,6 +872,7 @@ public class SBSportsPage extends BasePage {
 
     @FindBy(how = How.XPATH, using = "//li[@id='tabHeader_2']/a[.='Getting Started']")
     protected WebElement elmntGettingStartedHeader;
+
 
     @FindBy(how = How.XPATH, using = "//div[@id='myaccount_left']//li/a[.='My Account']")
     protected WebElement elmntMyAccountHeader;
@@ -968,19 +966,13 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//div[not(contains(@id,'betslipJQoteDiv'))]/div[@id='betslipDiv']//table[@class='betslipbbar']//button[@id][.='Clear All']")
     protected WebElement elmntBetSlipClearAllBtn;
 
-//    @FindBy(how = How.XPATH, using = "//div[@class='flag__body']/ul/li[not(contains(@class,'t25'))]/a[contains(@class,'tertiary')]/b[contains(text(),'')]")
-//    protected List<WebElement> elmntPlayerPropsSubTabs;
-
-    @FindBy(how = How.XPATH, using = "//div[@class='co-psl__panel']//li[@class='one-half']")
+    @FindBy(how = How.XPATH, using = "//div[@class='flag__body']/ul/li[not(contains(@class,'t25'))]/a[contains(@class,'tertiary')]/b[contains(text(),'')]")
     protected List<WebElement> elmntPlayerPropsSubTabs;
-
-    @FindBy(how = How.XPATH, using = "//div[@class='flag__image--rev hard--left  league-toggle']//li[@class='one-third']")
-    protected List<WebElement> elmntPlayerPropsSubTab;
 
     @FindBy(how = How.XPATH, using = "//div[@class='media__body']/descendant::div[@class='game-title']")
     protected WebElement elmntPlayerPropsDropDown;
 
-    @FindBy(how = How.XPATH, using = "//div/ul[contains(@class,'nav--dropdown-form')]/li[3]/a[@class='btn-ns ng-scope']")
+    @FindBy(how = How.XPATH, using = "//div/ul[contains(@class,'nav--dropdown-form')]/li[4]/a[@class='btn-ns ng-scope']")
     protected WebElement elmntPlayerPropsDropdownValue;
 
     @FindBy(how = How.XPATH, using = "//span[.='Build Your Bet']")
@@ -992,16 +984,14 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//div[@class='co-dropdown  h-show']/a//span[@class='icon-info']")
     protected WebElement elmntLearnMore;
 
+
     @FindBy(how = How.XPATH, using = "//li[@class='ng-scope']/a/descendant::span[.='NFL Sims']")
     protected WebElement BtnNFLSimsGame;
 
     @FindBy(how = How.XPATH, using = "//iframe[@id='builder']")
     protected WebElement PlayerPropsIFrame;
 
-//    @FindBy(how = How.XPATH, using = "//h3[@class='cap ng-scope']/span[@class='ng-scope']")
-//    protected WebElement elmntPlayerPropsTeam;
-
-    @FindBy(how = How.XPATH, using = "//div[@class='flush div-table']")
+    @FindBy(how = How.XPATH, using = "//h3[@class='cap ng-scope']/span[@class='ng-scope']")
     protected WebElement elmntPlayerPropsTeam;
 
     protected String strPlayerPropsTab = new StringBuilder()
@@ -1015,7 +1005,7 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//div[@class='co-search-predictive']/div[@class='markets-wrapper']")
     protected WebElement elmntPlayerPropsDefaultResuts;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='fade']//player-row[1]/div[contains(@class,'table')]")
+    @FindBy(how = How.XPATH, using = "//div[@class='island-large-res  fit']//player-row[1]/div[contains(@class,'table')]")
     protected WebElement elmntPlayerPropsSearchResuts;
 
     @FindBy(how = How.XPATH, using = "//div[@class='con-pb-criteria  island']//div[@class='flag__body']/div/b/a[@class='epsilon ng-binding']")
@@ -1215,9 +1205,8 @@ public class SBSportsPage extends BasePage {
     protected WebElement txtBetSlipError;
 
     @FindAll({
-            @FindBy(how = How.XPATH, using = "//div[@id='straightPopup']/a"),
-            @FindBy(how = How.XPATH, using = "//span[contains(text(),'Single Bet')]/following::a[1]")
-
+            @FindBy(how = How.XPATH, using = "//span[contains(text(),'Single Bet')]/following::a[1]"),
+            @FindBy(how = How.XPATH, using = "//div[@id='straightPopup']/a")
     })
     protected WebElement lnkRemoveTeamFromBetSlip;
 
@@ -1274,24 +1263,11 @@ public class SBSportsPage extends BasePage {
 
     //--------------------//
 
-    @FindBy(how = How.XPATH, using = "//li[@class='one-third']/descendant::a[contains(@class, 'btn cap')]")
+    @FindBy(how = How.XPATH, using = "//a[contains(@class, 'btn cap')]")
     protected List<WebElement> lnkCurrentAndUpcoming;
-
-    @FindBy(how = How.XPATH, using = "//div[@class='flag__image--rev hard--left  league-toggle']//a[text()='build']")
-    protected WebElement lnkCurrentBuild;
 
     @FindBy(how = How.XPATH, using = "//*[@class='ui-grid-icon-menu']/ancestor::a")
     protected List<WebElement> lnkNavigators;
-
-//    @FindBy(how = How.XPATH, using = "//*[@class='flex-header__title  zeta']/following::div[@class='bets-btn__caret']")
-//    protected WebElement lnkRightNavigators;
-
-    @FindBy(how = How.XPATH, using = "//*[@class='ui-grid-icon-menu']/ancestor::a//div")
-    protected WebElement lnkRightNavigators;
-
-    @FindBy(how = How.XPATH, using = "//li[@id='tabGf']")
-    protected WebElement elmntQuickGameMarket;
-    //li[@id='tabGf']
 
     @FindBy(how = How.XPATH, using = "//a[contains(@class, 'btn cap on') and contains(text(), Current)]")
     protected WebElement lnkCurrentMarkets;
@@ -1317,28 +1293,17 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//a[@class='rules_btn']")
     protected WebElement lnkMoreHelpUnderUpcomingEvents;
 
-//    @FindBy(how = How.XPATH, using = "//a[text()='Rules' and @class='ui-link']")
-//    protected WebElement lnkMoreHelpUnderUpcomingEvents;
-
     @FindBy(how = How.XPATH, using = "//div[@id='faq']/descendant::a[1]")
     protected WebElement lnkCloseUnderMoreHelp;
 
-//    @FindBy(how = How.XPATH, using = "//ul/descendant::a/b")
-//    protected List<WebElement> lnkOddsConverter;
-
-    @FindBy(how = How.XPATH, using = "//button//b[@class='micro caps ng-binding ng-scope']")
+    @FindBy(how = How.XPATH, using = "//ul/descendant::a/b")
     protected List<WebElement> lnkOddsConverter;
 
-    //div[@class='co-psl__panel']//li[@class='one-half']
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'large-res hard')]/descendant::a[contains(@class, 'on')]")
     protected WebElement lnkLeaguesUnderLeftNavigator;
 
-//    @FindBy(how = How.XPATH, using = "//b[.='select league']/following::a[1]")
-//    protected WebElement lnkCloseLeftNavigator;
-
-    @FindBy(how = How.XPATH, using = "//div[@class='co-psl visible']//a[@class='btn  co-psl__panel__header__close  icon-cross']")
+    @FindBy(how = How.XPATH, using = "//b[.='select league']/following::a[1]")
     protected WebElement lnkCloseLeftNavigator;
-
 
     @FindBy(how = How.XPATH, using = "(//div[@class='marketscroll'])[1]/descendant::button[2]/descendant::span[contains(., '.')]")
     protected WebElement txtOddsPatternChangeToDecimal;
@@ -1346,21 +1311,11 @@ public class SBSportsPage extends BasePage {
     @FindBy(how = How.XPATH, using = "(//ul[contains(@class, 'dropdown')])[1]/descendant::div[contains(@class, 'body')]")
     protected List<WebElement> lnkBetSlipDropDown;
 
-//    @FindBy(how = How.XPATH, using = "(//ul[contains(@class, 'dropdown')])[1]/following::div[@class='flag__body  cap']")
-//    protected List<WebElement> lnkBetSlipDropDown;
-
-//    @FindBy(how = How.XPATH, using = "//div[contains(@class, 't-med  ')]/descendant::span[2]")
-//    protected WebElement elmntBetSlipTeamCount;
-
-    @FindBy(how = How.XPATH, using = "//span[@class='no-bets-text']")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class, 't-med  ')]/descendant::span[2]")
     protected WebElement elmntBetSlipTeamCount;
 
-//    @FindBy(how = How.XPATH, using = "//div[.='bet slip']/following::a[1]")
-//    protected WebElement lnkCloseUnderBetSlip;
-
-    @FindBy(how = How.XPATH, using = "//a[text()='back']")
+    @FindBy(how = How.XPATH, using = "//div[.='bet slip']/following::a[1]")
     protected WebElement lnkCloseUnderBetSlip;
-
 
     @FindBy(how = How.XPATH, using = "//div[contains(@class, 'cf')]/descendant::a[contains(., '')]")
     protected List<WebElement> elmntMyBetsOptions;
@@ -1447,9 +1402,6 @@ public class SBSportsPage extends BasePage {
 
     @FindBy(how = How.XPATH, using = "(//i[contains(@class, 'basketball')])[1]/ancestor::a")
     protected WebElement lnkBasketBallLeague;
-
-    @FindBy(how = How.XPATH, using = "(//i[contains(@class, 'football')])[1]/ancestor::a")
-    protected WebElement lnkFootBallLeague;
 
     @FindBy(how = How.XPATH, using = "//input[@type='number']")
     protected WebElement BtnBetSlipInputField;
@@ -1695,13 +1647,10 @@ public class SBSportsPage extends BasePage {
     }
 
     public void clickMobConfirmBet() {
-        try {
-            waitForElement(btnConfirmBet);
-            click(btnConfirmBet);
-        }catch (Exception e){
-            e.getMessage();
-        }
+        waitForElement(btnConfirmBet);
+        click(btnConfirmBet);
     }
+
 
     public void clickAddMoreSelections() {
         waitForElement(lnkAddMoreSelection);
@@ -1710,15 +1659,9 @@ public class SBSportsPage extends BasePage {
     }
 
     public void selectNewTeam() {
-        try {
-            if (verifyElement(elmntNewTeam))
-            waitForElement(elmntNewTeam);
-            click(elmntNewTeam);
-            takeScreenshot("SelectNewTeam");
-        }catch (Exception e){
-            System.out.println("New Team is not available");
-            e.getMessage();
-        }
+        waitForElement(elmntNewTeam);
+        click(elmntNewTeam);
+        takeScreenshot("SelectNewTeam");
     }
 
     public void clickCheckBetSlip() {
@@ -1753,8 +1696,6 @@ public class SBSportsPage extends BasePage {
             // mouseClick(waitForElement(txtParlayBet));
 
             enterValue(waitForElement(txtParlayBet), "5");
-            click(waitForElement(elmntparlay));
-            waitForSeconds(3);
             takeScreenshot("AfterenterParlayAmount");
             click(waitForElement(elmntPlaceBet));
             takeScreenshot("AfterClickelmntPlaceBet");
@@ -1786,8 +1727,7 @@ public class SBSportsPage extends BasePage {
             click(btnPlaceMyBet);
             takeScreenshot("ClickPlaceMyBet");
         } else {
-//            if (!System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE))
-            if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE))){
+            if (!System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE)) {
                 waitForElement(elmntSingleBet);
                 click(elmntSingleBet);
             }
@@ -1828,8 +1768,7 @@ public class SBSportsPage extends BasePage {
             click(btnPlaceMyBet);
 
             takeScreenshot("ClickPlaceMyBet");
-
-        } else if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE))) {
+        } else {
             waitForElement(elmntSingleBet);
             click(elmntSingleBet);
             takeScreenshot("BeforeClickActioReverse");
@@ -1839,8 +1778,6 @@ public class SBSportsPage extends BasePage {
             mouseClick(waitForElement(txtActionReverseBet));
             enterValue(waitForElement(txtActionReverseBet), "10");
             takeScreenshot("AfterenterActionReverseAmount");
-            waitForSeconds(2);
-            jsClick(waitForElement(txtActionReverseWinBet));
             waitForSeconds(2);
             jsClick(waitForElement(elmntPlaceBet));
             takeScreenshot("AfterClickelmntPlaceBet");
@@ -3017,45 +2954,16 @@ public class SBSportsPage extends BasePage {
     }
 
 
-//    public boolean verifyPlayerPropsSubTab(DataTable Table) {
-//    //    focusFrame(PlayerPropsIFrame);
-//        List<String> SubTabs = Table.asList(String.class);
-//        List<String> ListElements = new ArrayList<String>();
-//        elmntPlayerPropsSubTabs.forEach(EleItem -> ListElements.add(EleItem.getText()));
-////        ListElements.remove(3);
-//        System.out.println("List element"+ ListElements);
-//        System.out.println("Compare element"+SubTabs);
-//        return (ListElements.equals(SubTabs));
-//    }
-
-
-
-
-
-    public void verifyPlayerPropsSubTab(DataTable Table) {
-
-        try {
-            System.out.println("here");
-            List<String> lstDatas = Table.asList(String.class);
-            waitForSeconds(2);
-//           jsClick(waitForElement(lnkNavigators.get(0)));
-//           click(waitForElement(lnkFootBallLeague));
-            waitForElements(lnkCurrentAndUpcoming);
-            lnkCurrentAndUpcoming.forEach(z-> System.out.println(getText(z)));
-            compareList(waitForElements(lnkCurrentAndUpcoming), lstDatas);
-        } catch (Exception e) {
-            e.getMessage();
-        }
+    public boolean verifyPlayerPropsSubTab(DataTable Table) {
+    //    focusFrame(PlayerPropsIFrame);
+        List<String> SubTabs = Table.asList(String.class);
+        List<String> ListElements = new ArrayList<String>();
+        elmntPlayerPropsSubTabs.forEach(EleItem -> ListElements.add(EleItem.getText()));
+        ListElements.remove(3);
+        System.out.println(ListElements);
+        System.out.println(SubTabs);
+        return (ListElements.equals(SubTabs));
     }
-    public boolean verifyPlayerPropsSubTabs(DataTable Table) {
-
-        List<String> lstDatas = Table.asList(String.class);
-        waitForSeconds(2);
-//        jsClick(waitForElement(lnkNavigators.get(0)));
-//        click(waitForElement(lnkFootBallLeague));
-        return compareList(waitForElements(elmntPlayerPropsSubTabs.subList(0,2)), lstDatas);
-    }
-
 
     public void clickPlayerPropsDropDown() {
         waitForElement(elmntPlayerPropsDropDown);
@@ -3090,7 +2998,8 @@ public class SBSportsPage extends BasePage {
 
     public boolean verifyPlayerPropsTeams() {
         waitForElement(elmntPlayerPropsTeam);
-        return verifyElement(elmntPlayerPropsTeam);
+        verifyElement(elmntPlayerPropsTeam);
+        return focusBackToDefaultFrame();
     }
 
     public void clickPlayerPropsSubTab(String strSubTabs) {
@@ -3112,14 +3021,12 @@ public class SBSportsPage extends BasePage {
     }
 
     public void verifyDefaultResults() {
-        waitForSeconds(2);
         waitForElement(elmntPlayerPropsDefaultResuts);
         verifyElement(elmntPlayerPropsDefaultResuts);
     }
 
     public void selectDropdownValue() {
         waitForElement(elmntPlayerPropsDropDown);
-        click(elmntPlayerPropsDropDown);
         click(elmntPlayerPropsDropdownValue);
     }
 
@@ -3409,9 +3316,6 @@ public class SBSportsPage extends BasePage {
     //----------------//
 
     public boolean verifyStraightBetPopUp() {
-
-        waitForSeconds(2);
-       waitForElement(btnPlaceMyBet);
         return verifyElement(waitForElement(elmntBetSlipForm));
     }
 
@@ -3446,7 +3350,6 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean clickBetSlipClose() {
-//        waitForElement(elmntPointDropDown);
         return click(waitForElement(lnkRemoveTeamFromBetSlip));
     }
 
@@ -3474,7 +3377,7 @@ public class SBSportsPage extends BasePage {
         } catch (Throwable t) {
             Reporter.addStepLog("If Bet Not Available");
         }
-        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE))) {
+        if(System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE)) {
             try {
                 boolean boolActionRevBetResult = lstDatas.get(3).equalsIgnoreCase(getText(waitForElement(elmntActionReverse)).trim());
                 return boolSingleBetResult && boolParlaysResult && boolIfbetResult && boolActionRevBetResult;
@@ -3547,11 +3450,8 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean clickSingleUnderBetSlip() {
-       if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE)))
-        {
-            waitForSeconds(2);
-//            click(waitForElement(elmntIfBet));
-            click(waitForElement(elmntSingleBet));
+        if (!System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE)) {
+            click(waitForElement(elmntIfBet));
         }
         return click(waitForElement(elmntSingleBet));
     }
@@ -3700,7 +3600,6 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean verifyMoreHelpUnderUpcomingEvents() {
-        ScrollDownAction(lnkMoreHelpUnderUpcomingEvents);
         return verifyElement(waitForElement(lnkMoreHelpUnderUpcomingEvents));
     }
 
@@ -3722,29 +3621,17 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean verifyOddsConverter(DataTable strDatas) {
-        waitForSeconds(3);
-//               click(waitForElement(lnkRightNavigators));
-        jsClick(waitForElement(lnkNavigators.subList(0,4).get(2)));
-        System.out.println("Odd Valu coverter1"+(lnkNavigators.subList(0,4).get(2)));
-    List<String> lstDatas = strDatas.asList(String.class);
-//        return compareList(waitForElements(lnkOddsConverter), lstDatas);
-        System.out.println("Odd Valu coverter1"+(lnkOddsConverter.subList(0,3).get(0)));
-        System.out.println("Odd Valu coverter2"+(lnkOddsConverter.subList(0,3).get(1)));
-        System.out.println("Odd Valu coverter3"+(lnkOddsConverter.subList(0,3).get(2)));
-        return compareList(waitForElements(lnkOddsConverter.subList(0,3)), lstDatas);
-}
+        jsClick(waitForElement(lnkNavigators.get(0)));
+        List<String> lstDatas = strDatas.asList(String.class);
+        return compareList(waitForElements(lnkOddsConverter), lstDatas);
+    }
 
     public boolean verifyLeaguesUnderLeftNavigator() {
-        waitForSeconds(2);
-        jsClick(waitForElement(lnkNavigators.get(0)));
         return verifyElement(waitForElement(lnkLeaguesUnderLeftNavigator));
     }
 
     public boolean clickOddsConverter() {
-
-        click(waitForElement(lnkCloseLeftNavigator));
-        jsClick(waitForElement(lnkNavigators.get(2)));
-        return click(waitForElement(lnkOddsConverter.subList(0,3).get(1)));
+        return click(waitForElement(lnkOddsConverter.get(1)));
     }
 
     public boolean verifyOddsPatternChange() {
@@ -3760,13 +3647,11 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean verifyRightNavigatorUnderPlayerProps() {
-//        jsClick(waitForElement(lnkNavigators.subList(0,4).get(2)));
-        return verifyElement(waitForElement(lnkRightNavigators));
+        return verifyElement(waitForElement(lnkNavigators.get(1)));
     }
 
     public boolean clickRightNavigator() {
-//         jsClick(waitForElement(lnkNavigators.subList(0,4).get(2)));
-        return click(waitForElement(lnkRightNavigators));
+        return click(waitForElement(lnkNavigators.get(1)));
     }
 
     public boolean verifyBetSlipDropDown(DataTable strTabs) {
@@ -3787,7 +3672,7 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean clickMyBetsUnderDropDown() {
-        return click(waitForElement(lnkBetSlipDropDown.get(0)));
+        return click(waitForElement(lnkBetSlipDropDown.get(1)));
     }
 
     public boolean verifyMyBetsOptions(DataTable strDatas) {
@@ -3816,7 +3701,7 @@ public class SBSportsPage extends BasePage {
     }
 
     public boolean clickHelpUnderDropDown() {
-        return click(waitForElement(lnkBetSlipDropDown.get(1)));
+        return click(waitForElement(lnkBetSlipDropDown.get(2)));
     }
 
     public boolean enterRTNValueUnderBetSlip() {
@@ -3844,13 +3729,10 @@ public class SBSportsPage extends BasePage {
 
     public boolean clickAnyLeagueWithSoccerIconUnderLeftNavigator() {
         waitForSeconds(2);
-        jsClick(waitForElement(lnkNavigators.subList(0,4).get(0)));
         return click(waitForElement(lnkSoccerLeague));
     }
 
     public boolean clickBUILDUnderPlayerPropsPage() {
-        waitForElements(lnkCurrentAndUpcoming);
-        lnkCurrentAndUpcoming.forEach(z-> System.out.println(getText(z)));
         return click(waitForElement(lnkCurrentAndUpcoming.get(0)));
     }
 
@@ -3938,19 +3820,7 @@ public class SBSportsPage extends BasePage {
 
     public boolean clickLeagueWithBasketBallIcon() {
         waitForSeconds(2);
-        jsClick(waitForElement(lnkNavigators.get(0)));
         return click(waitForElement(lnkBasketBallLeague));
-    }
-
-    public boolean clickLeagueWithFootBallIcon() {
-        waitForSeconds(2);
-        jsClick(waitForElement(lnkNavigators.subList(0,4).get(0)));
-        return click(waitForElement(lnkFootBallLeague));
-    }
-    public boolean verifyPlayerPopsNavigater(){
-        focusFrame(waitForElement(iFramePlayerprops));
-        waitForElements(lnkNavigators);
-        return verifyElement(lnkNavigators.get(0)) && verifyElement(lnkNavigators.get(1));
     }
 
 }

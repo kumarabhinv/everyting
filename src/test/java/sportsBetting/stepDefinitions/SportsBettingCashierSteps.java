@@ -545,3 +545,4 @@ public class SportsBettingCashierSteps {
         Assert.assertTrue(SportsBettingPageContainer.sbcashierpage.verifyDepositPage());
     }
 }
+

@@ -10,9 +10,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import java.io.File;
 
-@CucumberOptions(features = {"src/test/resources/features/sportsBetting/Regression/RT_SB_Live_Casino.feature" },
+@CucumberOptions(features = {"src/test/resources/features/sportsBetting/Regression/RT_SB_Esports.feature" },
         monochrome = true,
-        glue = {"sportsBetting"}, tags = {"@DESKTOP"},
+        glue = {"sportsBetting"}, tags = {"@TEST"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:",
                 "pretty", "html:target/cucumber-report/single",
            //     "com.epam.reportportal.cucumber.ScenarioReporter",

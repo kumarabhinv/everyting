@@ -71,7 +71,7 @@ public class SportsBettingPromotionsSteps {
 
     }
 
-    @Given("^as a User, I am on the Terms & Conditions pop-up$")
+    @Given("^as a User, I am on the Terms & Conditions pop-up in sportsBetting$")
     public void asAUserIAmOnTheTermsConditionsPopUp() {
    //  Assert.assertTrue(SportsBettingPageContainer.sbpromotionspage.verifyTermsAndConditionsPopUp());
         Assert.assertTrue(SportsBettingPageContainer.sbpromotionspage.verifyTermsAndConditionsPopUp());

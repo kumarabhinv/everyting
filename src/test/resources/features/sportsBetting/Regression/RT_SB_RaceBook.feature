@@ -1,14 +1,14 @@
 Feature: Validating the functionality of "Racebook" tab in sports betting.
 
-#  @DESKTOP @MOBILE
-#  Scenario Outline: User visits SportsBetting application
-#    Given I am on SportsBetting application
-#    When User login to the SportsBetting site with following credential <Username> and <Password>
-#    Then I should see the SportsBetting site homepage
-#
-#    Examples:
-#      | Username  | Password  |
-#      | SB808358  | C0d0!d_P@ss1 |
+  @DESKTOP @MOBILE
+  Scenario Outline: User visits SportsBetting application
+    Given I am on SportsBetting application
+    When User login to the SportsBetting site with following credential <Username> and <Password>
+    Then I should see the SportsBetting site homepage
+
+    Examples:
+      | Username  | Password  |
+      | SB808358  | C0d0!d_P@ss1 |
 
 
    @DESKTOP @MOBILE

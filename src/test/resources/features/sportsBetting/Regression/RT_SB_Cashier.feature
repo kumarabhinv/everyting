@@ -1,7 +1,7 @@
 Feature: Validating the functionality of "Cashier" tab in sports betting.
 
 
-  @DESKTOP @MOBIlE
+  @DESKTOP @MOBIlE @TEST
   Scenario Outline: User visits SportsBetting application
     Given I am on SportsBetting application
     When User login to the SportsBetting site with following credential <Username> and <Password>
@@ -12,7 +12,7 @@ Feature: Validating the functionality of "Cashier" tab in sports betting.
       | SB808358  | C0d0!d_P@ss1 |
 
 
-  @DESKTOP
+  @DESKTOP @TEST
   Scenario Outline: User verifies all the tabs present under Cashier tab
     Given I am on SportsBetting application
     When I move to CASHIER
@@ -507,6 +507,7 @@ Feature: Validating the functionality of "Cashier" tab in sports betting.
       | Litecoin     |
       | Ripple       |
       | Bitcoin Cash |
+      | Stellar      |
 #     | Dash         |
 
     Examples:

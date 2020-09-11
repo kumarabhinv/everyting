@@ -126,7 +126,7 @@ public class SBCasinoPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//h3[text() ='100% CASINO BONUS TIMES 3']//following::a[text() ='Click here'][1]")
     protected WebElement elmntBonusPromotionsTab;
 
-    @FindBy(how = How.XPATH, using = "//a[text() ='Play Now']")
+    @FindBy(how = How.XPATH, using = "(//a[text() ='CLAIM NOW'])[2]")
     protected WebElement elmntPokerTab;
 
     @FindBy(how = How.XPATH, using = "(//a[contains(text(),'Terms')])[5] ")

@@ -498,7 +498,7 @@ public class SBMyAccountPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//h2[text()='Ticket Wager Detail']")
     protected WebElement elmntTicket;
 
-    @FindBy(how = How.XPATH, using = "(//div[@class='hidden trn_detail wager_detail'])[2]")
+    @FindBy(how = How.XPATH, using = "(//div[@class='hidden trn_detail wager_detail'])[7]")
     protected WebElement elmntTicketTxt;
 
     @FindBy(how = How.XPATH, using = "//table[@class ='record']")
@@ -513,7 +513,7 @@ public class SBMyAccountPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//a[@class ='ui-datepicker-prev ui-corner-all']")
     protected WebElement selPreviousMonth;
 
-    @FindBy(how = How.XPATH, using = "//span[text() ='There are no wagers within selected time range.']")
+    @FindBy(how = How.XPATH, using = "//div[@class ='wagers_table_wrapper']")
     protected WebElement elmntGradedWager;
 
     @FindBy(how = How.XPATH, using = "//input[@id='endDate']")
@@ -541,7 +541,7 @@ public class SBMyAccountPage extends BasePage {
     protected WebElement elmntTransactionPage;
 
     @FindAll({
-            @FindBy(how = How.XPATH, using = "(//table[@class='record']//a)[2]")
+            @FindBy(how = How.XPATH, using = "(//table[@class='record']//a)[7]")
     })
     protected WebElement elmntDocumentHeader;
 
@@ -660,11 +660,14 @@ public class SBMyAccountPage extends BasePage {
     @FindBy(how = How.CLASS_NAME, using = "cloudsponge-launch")
     protected WebElement elmntAddressBook;
 
-    @FindBy(how = How.XPATH, using = "(//li)[82]")
+    @FindBy(how = How.XPATH, using = "//li[@data-launcher='uol']")
     protected WebElement elmntAnyChoice;
 
-    @FindBy(how = How.XPATH, using = "//a[text() ='Please try again']")
+    @FindBy(how = How.XPATH, using = "//input[@value='Sign in']")
     protected WebElement elmntAddressBookUnderMyAccount;
+
+  @FindBy(how = How.XPATH, using = "(//em[@class='cloudsponge-glyph cross'])[3]")
+    protected WebElement iconCloseUnderAddressBookUnderMyAccount;
 
     @FindBy(how = How.XPATH, using = "//a[text() ='View My Referrals']")
     protected WebElement elmntViewReferrals;
@@ -2356,7 +2359,10 @@ public class SBMyAccountPage extends BasePage {
     public boolean verifySocialMediaPopupUnderReferAFriend() {
         focusWindow(2);
         waitForElement(elmntFbIconPage);
-        return verifyElement(elmntFbIconPage);
+        boolean fbIcon = verifyElement(elmntFbIconPage);
+        closeWindow(2);
+        focusWindow(1);
+        return fbIcon;
     }
 
     public boolean enterDetailsUnderReferAFriend() {
@@ -2398,8 +2404,7 @@ public class SBMyAccountPage extends BasePage {
             return verifyElement(elmntAddressBookUnderMyAccount);
         }
         boolean emaliAddress = verifyElement(elmntAddressBookUnderMyAccount);
-        closeWindow(2);
-        focusWindow(1);
+        click(iconCloseUnderAddressBookUnderMyAccount);
         return emaliAddress;
     }
 
@@ -2795,12 +2800,7 @@ public class SBMyAccountPage extends BasePage {
         if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE)) {
             return verifyElement(elmntRedirectedPages);
         }
-        boolean commissionPage = verifyElement(elmntRedirectedPages);
-        focusWindow(2);
-        closeWindow(2);
-        focusWindow(1);
-        return commissionPage;
-
+      return  verifyElement(elmntRedirectedPages);
     }
 
     //My Account Mobile Methods
@@ -3048,7 +3048,7 @@ public class SBMyAccountPage extends BasePage {
             }
             return false;
         }
-        return verifyElement(elmntFbIconMobile);
+      return verifyElement(elmntFbIconMobile);
     }
 
     public boolean enterValueUnderReferFriend(DataTable strUserPassword) {

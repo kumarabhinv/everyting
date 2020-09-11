@@ -238,7 +238,7 @@ public class SportsBettingLiveBettingSteps {
         SportsBettingPageContainer.sblivebettingpage.verifyCalendardays();
     }
 
-    @Then("^I click days where no live events are scheduled on Calendar$")
+    @Then("^I click days where no live events are scheduled on the Calendar$")
     public void iClickDaysWhereNoLiveEventsAreScheduledOnCalendar() {
         Assert.assertTrue(SportsBettingPageContainer.sblivebettingpage.clickCalendardays());
     }
@@ -366,7 +366,7 @@ public class SportsBettingLiveBettingSteps {
         Assert.assertTrue(SportsBettingPageContainer.sblivebettingpage.verifyMarketTips());
     }
 
-    @When("^I click the no market tips available sport$")
+    @When("^I click no market tips available sport$")
     public void iClickTheNoMarketTipsAvailableSport() {
         SportsBettingPageContainer.sblivebettingpage.clickMarketTipsGames();
     }

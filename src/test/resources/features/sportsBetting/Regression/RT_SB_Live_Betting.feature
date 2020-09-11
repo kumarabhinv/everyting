@@ -1,16 +1,16 @@
 Feature:User validates all the functionalies of "LIVE BETTING" tab
 
-#  @DESKTOP
-#  Scenario Outline: User visits SportsBetting application
-#    Given I am on SportsBetting application
-#    When User login to the SportsBetting site with following credential <Username> and <Password>
-#    Then I should see the SportsBetting site homepage
-#
-#    Examples:
-#      | Username | Password  |
-#      | SB808358 | C0d0!d_P@ss1 |
+  @DESKTOP
+  Scenario Outline: User visits SportsBetting application
+    Given I am on SportsBetting application
+    When User login to the SportsBetting site with following credential <Username> and <Password>
+    Then I should see the SportsBetting site homepage
 
-  @MOBILE-Ignore
+    Examples:
+      | Username | Password  |
+      | SB808358 | C0d0!d_P@ss1 |
+
+  @MOBILE
   Scenario: User verifies all the functionalities of "LIVE" tab under homepage
     Given I am on SportsBetting application
     When I move to LIVE
@@ -55,7 +55,7 @@ Feature:User validates all the functionalies of "LIVE BETTING" tab
       | RACEBOOK       |
 
 #Hide Live Menu
-  @MOBILE-Ignore
+  @MOBILE
   Scenario: User verifies the functionality of "Hide Live Menu" sub-tab under "Live" page
     Given as a User, I am already on the Live page
     And I see Hide Live Menu containing live-tabs
@@ -78,7 +78,7 @@ Feature:User validates all the functionalies of "LIVE BETTING" tab
       | My Wagers  |
       | Calendar   |
 
-  @MOBILE-Ignore
+  @MOBILE
   Scenario: User clicks on "Show Live Menu" sub-tab under "Live" page
     Given as a User, I see Live Page Show Live Menu
     When I click on Live Page Show Live Menu
@@ -351,7 +351,7 @@ Feature:User validates all the functionalies of "LIVE BETTING" tab
     Given I am on SportsBetting application
     And I move to LIVE BETTING
     When I click Calender
-    Then I click days where no live events are scheduled on Calendar
+    Then I click days where no live events are scheduled on the Calendar
 
   @DESKTOP
   Scenario:  User validates Choose Sport filter option on Calendar view
@@ -573,7 +573,7 @@ Feature:User validates all the functionalies of "LIVE BETTING" tab
   Scenario: User validates when there is No Market Tips available for Live events on Bet Slip
     Given as a user, I am on Live Betting tab
     And I see Bet slip
-    When I click the no market tips available sport
+    When I click no market tips available sport
     Then I should see Currently there are no market tips available Message
 
   @MOBILE

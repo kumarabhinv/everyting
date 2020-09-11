@@ -76,7 +76,7 @@ public class SignUpPage extends BasePage {
     })
     protected List<WebElement> elmntsHeaderTab;
 
-    @FindBy(how = How.XPATH, using = "//center[normalize-space(.)='PLAYER PROPS']/parent::div")
+    @FindBy(how = How.XPATH, using = "//center[normalize-space(.)='RACEBOOK']/parent::div")
     protected WebElement elmntsPokerTabMobile;
 
     @FindBy(how = How.XPATH, using = "//span[.='Sports']")
@@ -300,7 +300,7 @@ public class SignUpPage extends BasePage {
                 btnclosepopup.click();
             }
         }
-        if(System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE))
+        if(System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE))
         {
             waitForElement(elmntScrolling);
         }
@@ -468,7 +468,7 @@ public class SignUpPage extends BasePage {
     public boolean clickLogoutButton() {
         if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_TABLET)) {
             click(waitForElement(btnTabletLogoutDropDown));
-        } else if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE)) {
+        } else if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE)) {
             click(waitForElement(lnkLeftNavigator));
         } else {
             waitForElement(elmntAccountIDfield);

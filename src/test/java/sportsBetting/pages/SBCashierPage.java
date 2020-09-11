@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.yaml.snakeyaml.scanner.Constant;
+//import org.yaml.snakeyaml.scanner.Constant;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -270,7 +270,7 @@ public class SBCashierPage extends BasePage {
     protected WebElement lnkWireTransferTab;
 
     @FindAll({
-            @FindBy(how = How.XPATH, using = "//button[.='Click here to begin']"),
+            @FindBy(how = How.XPATH, using = "//div[@class='chips-row']"),
             @FindBy(how = How.XPATH, using = "//select[@class='lp_select_field']")  //Desktop
     })
     protected WebElement selChatPopUp;
@@ -281,7 +281,10 @@ public class SBCashierPage extends BasePage {
     @FindBy(how = How.XPATH, using = "//strong[.='Cashier Check']/ancestor::a")  //Desktop
     protected WebElement lnkCashierCheckTab;
 
-    @FindBy(how = How.XPATH, using = "(//button/descendant::img[contains(@class, 'close')])[2]/parent::div")  //Desktop
+    @FindBy(how = How.XPATH, using = "//div[@class='lp_menu-top-icon lp_icon-white']")  //Desktop
+    protected WebElement iconChatOption;
+
+    @FindBy(how = How.XPATH, using = "(//div[.='End conversation'])[1]")  //Desktop
     protected WebElement btnCloseChatPopUp;
 
     @FindBy(how = How.XPATH, using = "//strong[.='EcoPayz']/ancestor::a")  //Desktop
@@ -647,13 +650,11 @@ public class SBCashierPage extends BasePage {
     public boolean verifyCashierMoreTabs(DataTable depositTabs) {
         jsScrollDown();
         List<String> depositMoreTabs = depositTabs.asList(String.class);
-        waitForElements(lnkCashirDepositMoreTabs);
         return compareList(waitForElements(lnkCashirDepositMoreTabs), depositMoreTabs);
     }
 
     public boolean verifyBitcoinDepositOptions(DataTable depositTabs) {
         List<String> bitcoinDepositOptions = depositTabs.asList(String.class);
-        waitForElements(btnBitcoinMoreDepositOptions);
         return compareList(waitForElements(btnBitcoinMoreDepositOptions), bitcoinDepositOptions);
     }
 
@@ -665,7 +666,6 @@ public class SBCashierPage extends BasePage {
     public boolean verifyPromoCodes(DataTable strTabs) {
         List<String> promocodeVerify = strTabs.asList(String.class);
         waitForSeconds(2);
-        waitForElements(lnkPromoCodesVerify);
         return compareList(waitForElements(lnkPromoCodesVerify), promocodeVerify);
     }
 
@@ -738,7 +738,6 @@ public class SBCashierPage extends BasePage {
 
     public boolean verifyCreditcardOptions(DataTable strOptions) {
         List<String> strCreditCardOptions = strOptions.asList(String.class);
-        waitForElements(elmntCreditCardOptions);
         return compareList(waitForElements(elmntCreditCardOptions), strCreditCardOptions);
     }
 
@@ -758,7 +757,6 @@ public class SBCashierPage extends BasePage {
 
     public boolean verifyCryptoCurrencySubTabs(DataTable strTabs) {
         List<String> listTabs = strTabs.asList(String.class);
-        waitForElements(elmntListOriginalTabs);
         return compareList(waitForElements(elmntListOriginalTabs), listTabs);
     }
 
@@ -794,7 +792,6 @@ public class SBCashierPage extends BasePage {
 
     public boolean verifyLitecoinOptions(DataTable strOptions) {
         List<String> strLitecoinOptions = strOptions.asList(String.class);
-        waitForElements(btnOriginalOptions);
         return compareList(waitForElements(btnOriginalOptions), strLitecoinOptions);
     }
 
@@ -829,7 +826,6 @@ public class SBCashierPage extends BasePage {
 
     public boolean verifyRippleDepositPage(DataTable strOptions) {
         List<String> strLitecoinOptions = strOptions.asList(String.class);
-        waitForElements(btnOriginalOptions);
         return compareList(waitForElements(btnOriginalOptions), strLitecoinOptions);
     }
 
@@ -839,7 +835,6 @@ public class SBCashierPage extends BasePage {
 
     public boolean verifyBitcoinCashDepositPage(DataTable strOptions) {
         List<String> strLitecoinOptions = strOptions.asList(String.class);
-        waitForElements(btnOriginalOptions);
         return compareList(waitForElements(btnOriginalOptions), strLitecoinOptions);
     }
 
@@ -850,7 +845,6 @@ public class SBCashierPage extends BasePage {
     public boolean verifySkrillDepositPage(DataTable strOptions) {
         waitForSeconds(2);
         List<String> skrillOptions = strOptions.asList(String.class);
-        waitForElements(btnOriginalOptions);
         return compareList(waitForElements(btnOriginalOptions), skrillOptions);
     }
 
@@ -878,11 +872,12 @@ public class SBCashierPage extends BasePage {
         waitForSeconds(4);
         try {
             verifyElement(waitForElement(selChatPopUp));
+            click(iconChatOption);
             return click(waitForElement(btnCloseChatPopUp));
         }
         catch (TimeoutException e){
             Reporter.addStepLog("Popup is not opened");
-            return true;
+            return false;
 
         }
     }
@@ -904,7 +899,6 @@ public class SBCashierPage extends BasePage {
         if (strWithdrawalLocalOptions.get(1).equalsIgnoreCase("Help(icon)")) {
             verifyElement(waitForElement(btnHelpCashier));
         }
-        waitForElements(btnWithdrawalRequestOptions);
         btnWithdrawalRequestOptions.forEach(l -> System.out.println(l.getText()));
         if (!(System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).equalsIgnoreCase(Constants.ENV_VARIABLE_MOBILE))) {
             return compareList(btnWithdrawalRequestOptions, strWithdrawalLocalOptions.subList(2, 8));
@@ -920,7 +914,6 @@ public class SBCashierPage extends BasePage {
             verifyElement(waitForElement(btnBackButton));
             verifyElement(waitForElement(btnHelpCashier));
         }
-        waitForElements(btnWithdrawalRequestOptions);
         btnWithdrawalRequestOptions.forEach(l -> System.out.println(l.getText()));
         return compareList(btnWithdrawalRequestOptions, strWithdrawalLocalOptions.subList(2, 8));
     }
@@ -1026,7 +1019,6 @@ public class SBCashierPage extends BasePage {
         if (cashierClosePopUpOptions.get(0).equalsIgnoreCase("close (icon)"))
             cashierPopUpMatchResult = verifyElement(waitForElement(lnkCashierClosePopUpOriginalOptions.get(0)));
         else
-            waitForElements(lnkCashierClosePopUpOriginalOptions);
             cashierPopUpMatchResult = compareList(waitForElements(lnkCashierClosePopUpOriginalOptions).subList(1, 3), cashierClosePopUpOptions);
         return cashierPopUpMatchResult;
     }

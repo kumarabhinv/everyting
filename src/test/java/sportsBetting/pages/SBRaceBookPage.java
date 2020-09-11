@@ -84,6 +84,9 @@ public class SBRaceBookPage extends BasePage {
     })
             protected WebElement elmntMyAccountUnderRacebook;
 
+    @FindBy(how = How.XPATH, using = "//span[@id='ucBetSlip_lblBetSlipMyAccount']")
+    protected WebElement elmntMyAccountUnderRacebookDesktop;
+
     @FindBy(how = How.XPATH, using = "//div[@id='dvPopupMyAccount']/descendant::span[contains(text(), 't')]")
     protected List<WebElement> elmntMyAccountHoverList;
 
@@ -429,7 +432,7 @@ public class SBRaceBookPage extends BasePage {
     public void mouseOverMyAccount() {
         jsScrollDown();
         focusFrame(elmntFrameRacebookPage);
-        mouseOver(waitForElement(elmntMyAccountUnderRacebook));
+        mouseOver(waitForElement(elmntMyAccountUnderRacebookDesktop));
     }
 
     public boolean verifyMouseOveredItems(DataTable strTabs) {
@@ -501,11 +504,11 @@ public class SBRaceBookPage extends BasePage {
     public void clickMyAccountView() {
         focusFrame(elmntFrameRacebookPage);
         waitForSeconds(2);
-        click(waitForElement(elmntMyAccountUnderRacebook));
+        click(waitForElement(elmntMyAccountUnderRacebookDesktop));
         click(waitForElement(elmntCloseMyAccountVisibility));
         takeScreenshot("try");
         waitForSeconds(2);
-         click(waitForElement(elmntMyAccountUnderRacebook));
+         click(waitForElement(elmntMyAccountUnderRacebookDesktop));
     }
 
     public boolean verifyClickedMyAccountTabs(DataTable strTabs) {

@@ -32,7 +32,7 @@ public class SportsBettingSportsBookSteps {
 
     @And("^I choose a team in SportsBook page$")
     public void iChooseATeamInSportsBookPage() {
-        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_TABLET))){
+        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_TABLET)) {
             SportsBettingPageContainer.sbsportspage.selectATeamForBetting();
         } else {
             SportsBettingPageContainer.sbsportspage.selectFootBallTeamInSpreadColumn();
@@ -42,7 +42,7 @@ public class SportsBettingSportsBookSteps {
 
     @And("^I click Place My Bet in Straight Bet form$")
     public void iClickPlaceMyBetInStraightBetForm() {
-        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE))) {
+        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE)) {
             SportsBettingPageContainer.sbsportspage.clickPlaceMyBetInMobile();
         } else if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_TABLET)) {
             SportsBettingPageContainer.sbsportspage.clickPlaceMyBetInTabletForStraight();
@@ -53,7 +53,7 @@ public class SportsBettingSportsBookSteps {
 
     @When("^I confirm my straight bet$")
     public void iConfirmMyStraightBet() {
-        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE_DEMO).contains(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_TABLET))) {
+        if (System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_MOBILE) || System.getProperty(Constants.ENV_VARIABLE_EXECUTION_TYPE).contains(Constants.ENV_VARIABLE_TABLET)) {
             SportsBettingPageContainer.sbsportspage.clickMobConfirmBet();
         } else {
             SportsBettingPageContainer.sbsportspage.clickConfirmBet();
@@ -1136,15 +1136,8 @@ public class SportsBettingSportsBookSteps {
 
     @Then("^I see few sub-tabs on the page displayed on clicking PLAYER PROPS$")
     public void iSeeFewSubTabsOnThePageDisplayedOnClickingPLAYERPROPS(DataTable Table) {
-//     SportsBettingPageContainer.sbsportspage.clickPlayerPropsGames();
-//        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyPlayerPropsSubTab(Table));
-        SportsBettingPageContainer.sbsportspage.verifyPlayerPropsSubTab(Table);
-    }
-
-    @Then("^I see sub-tabs on the page displayed on clicking PLAYER PROPS$")
-    public void iSeeSubTabsOnThePageDisplayedOnClickingPLAYERPROPS(DataTable Table) {
-//     SportsBettingPageContainer.sbsportspage.clickPlayerPropsGames();
-        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyPlayerPropsSubTabs(Table));
+     SportsBettingPageContainer.sbsportspage.clickPlayerPropsGames();
+        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyPlayerPropsSubTab(Table));
     }
 
     @And("^I see a dropdown displaying all teams available to select form$")
@@ -1300,7 +1293,7 @@ public class SportsBettingSportsBookSteps {
         Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyGameMarketHeaderCollapesed());
     }
 
-    @Then("^I see <anchor tags> choices and one dropdown namely BETS$")
+    @Then("^I see (.*) choices and one dropdown namely BETS$")
     public void iSeeAnchorTagsChoicesAndOneDropdownNamelyBETS(DataTable Table) {
         Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyAnchorTags(Table));
     }
@@ -1623,7 +1616,7 @@ public class SportsBettingSportsBookSteps {
     }
 
     @Then("^I see one dropdown and two action-buttons$")
-    public void iSeeOneDropdownAndTwoActionButtons() {
+    public void iSeeOneDropdownAndTwoActionButtons(DataTable strDatas) {
         Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyActionButtonsUnderIfBet());
     }
 
@@ -1811,11 +1804,6 @@ public class SportsBettingSportsBookSteps {
 
     @When("^I click on Left Navigator and I see three odds converters$")
     public void iClickOnLeftNavigatorAndISeeThreeOddsConverters(DataTable strDatas) {
-        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyOddsConverter(strDatas));
-    }
-
-    @When("^I click on Right Navigator and I see three odds converters$")
-    public void iClickOnRightNavigatorAndISeeThreeOddsConverters(DataTable strDatas) {
         Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyOddsConverter(strDatas));
     }
 
@@ -2036,14 +2024,10 @@ public class SportsBettingSportsBookSteps {
 
     @When("^I click on any league active with football or basketball icon$")
     public void iClickOnAnyLeagueActiveWithFootballOrBasketballIcon() {
-        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.clickLeagueWithFootBallIcon());
+        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.clickLeagueWithBasketBallIcon());
     }
 
-    @And("^I Should see two navigators under Player Props page$")
-    public void iShouldSeeTwoNavigatorsUnderPlayerPropsPage() {
-        Assert.assertTrue(SportsBettingPageContainer.sbsportspage.verifyPlayerPopsNavigater());
-
-    }
+    
 }
 
 

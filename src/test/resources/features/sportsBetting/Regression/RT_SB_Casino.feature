@@ -1,15 +1,15 @@
 Feature: Validating the functionality of "CASINO" tab in sports betting.
 
 
-#  @MOBILE @DESKTOP
-#  Scenario Outline: User visits SportsBetting application
-#    Given I am on SportsBetting application
-#    When User login to the SportsBetting site with following credential <Username> and <Password>
-#    Then I should see the SportsBetting site homepage
-#
-#    Examples:
-#      | Username | Password     |
-#      | SB808358 | C0d0!d_P@ss1 |
+  @MOBILE @DESKTOP
+  Scenario Outline: User visits SportsBetting application
+    Given I am on SportsBetting application
+    When User login to the SportsBetting site with following credential <Username> and <Password>
+    Then I should see the SportsBetting site homepage
+
+    Examples:
+      | Username | Password     |
+      | SB808358 | C0d0!d_P@ss1 |
 
   @DESKTOP
   Scenario: User selects "Featured" sub tab
@@ -147,6 +147,7 @@ Feature: Validating the functionality of "CASINO" tab in sports betting.
     Given as a user, I have already clicked on CASINO tab under homepage
     When I select Slots from under dropdown
     Then I should see various games under the displayed page under Slots header
+
   @MOBILE
   Scenario: User selects any game from under "Slots" inside "CASINO" page
     Given as a user, I already see all the games under Slots option
